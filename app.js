@@ -10,3 +10,12 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
     $routeProvider.otherwise({redirectTo: '/'});
 }]);
+
+angular.module('resonance-main', ['ngMaterial'])
+    .config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('teal', {
+                'default': '600'
+            })
+            .accentPalette('pink');
+    });
