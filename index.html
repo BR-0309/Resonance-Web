@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="app.css">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 
+    <!-- In production use:
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+   -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
@@ -34,18 +39,48 @@
             <h2 flex md-truncate>Resonance</h2>
         </div>
     </md-toolbar>
-
+<div id="banner" md-colors="{background: 'primary-700'}">
+    <h1>Resonance</h1>
+    <h3>Where no news is fake news. Probably</h3>
+</div>
 </header>
 <main class="md-padding" layout="row" flex>
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- In production use:
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-    -->
-
+    <div style="text-align: center" flex>
+        <md-card style="min-width: 25%; display: inline-block">
+            <md-icon style="text-align: center;width: 100%" ng-bind="'arrow_back'"></md-icon>
+            <md-card-content>
+                <h2>Card headline</h2>
+                <p>Card content</p>
+            </md-card-content>
+            <md-card-footer>
+                Card footer
+            </md-card-footer>
+        </md-card>
+        <md-card style="min-width: 25%; display: inline-block">
+            <md-icon style="text-align: center;width: 100%" ng-bind="'arrow_back'"></md-icon>
+            <md-card-content>
+                <h2>Card headline</h2>
+                <p>Card content</p>
+            </md-card-content>
+            <md-card-footer>
+                Card footer
+            </md-card-footer>
+        </md-card>
+        <md-card style="min-width: 25%; display: inline-block">
+            <md-icon style="text-align: center;width: 100%" ng-bind="'arrow_back'"></md-icon>
+            <md-card-content>
+                <h2>Card headline</h2>
+                <p>Card content</p>
+            </md-card-content>
+            <md-card-footer>
+                Card footer
+            </md-card-footer>
+        </md-card>
+    </div>
 </main>
 <footer>
     <a href="/"><p>Copyright © 2017 Benjamin Raison</p></a>

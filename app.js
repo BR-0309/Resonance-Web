@@ -15,7 +15,8 @@ angular.module('resonance-main', ['ngMaterial'])
     .config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('teal', {
-                'default': '600'
+                'default': '600',
+                'hue-1': '700'
             })
             .accentPalette('pink');
     });
