@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('resonance-main', [
+angular.module('resonance-home', [
     'ngRoute',
     'ngMaterial'
 ]).
@@ -11,7 +11,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
-angular.module('resonance-main', ['ngMaterial'])
+angular.module('resonance-home', ['ngMaterial'])
     .config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('teal', {
