@@ -39,46 +39,44 @@
             <h2 flex md-truncate>Resonance</h2>
         </div>
     </md-toolbar>
-<div id="banner" md-colors="{background: 'primary-700'}">
-    <h1>Resonance</h1>
-    <h3>Where no news is fake news. Probably</h3>
-</div>
+    <div id="banner" md-colors="{background: 'primary-700'}">
+        <h1>Resonance</h1>
+        <h3>Where no news is fake news. Probably</h3>
+    </div>
 </header>
-<main class="md-padding" layout="row" flex>
+<main class="md-padding" layout="row" layout-align="center center" layout="column" flex>
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div style="text-align: center" flex>
-        <md-card style="min-width: 25%; display: inline-block">
-            <md-icon style="text-align: center;width: 100%" ng-bind="'arrow_back'"></md-icon>
+    <div class="center" layout="flex" layout-align="center top" layout-wrap>
+        <md-card class="card-home">
+            <md-icon ng-bind="'autorenew'"></md-icon>
             <md-card-content>
-                <h2>Card headline</h2>
-                <p>Card content</p>
+                <h2>Continuous</h2>
+                <p>Never stop informing yourself.</p>
             </md-card-content>
-            <md-card-footer>
-                Card footer
-            </md-card-footer>
         </md-card>
-        <md-card style="min-width: 25%; display: inline-block">
-            <md-icon style="text-align: center;width: 100%" ng-bind="'arrow_back'"></md-icon>
+        <md-card class="card-home">
+            <md-icon ng-bind="'explore'"></md-icon>
             <md-card-content>
-                <h2>Card headline</h2>
-                <p>Card content</p>
+                <h2>Explore</h2>
+                <p>Explore the world through the written word, or discover the next big innovation</p>
             </md-card-content>
-            <md-card-footer>
-                Card footer
-            </md-card-footer>
         </md-card>
-        <md-card style="min-width: 25%; display: inline-block">
-            <md-icon style="text-align: center;width: 100%" ng-bind="'arrow_back'"></md-icon>
+        <md-card class="card-home">
+            <md-icon ng-bind="'merge_type'"></md-icon>
             <md-card-content>
-                <h2>Card headline</h2>
-                <p>Card content</p>
+                <h2>Compare</h2>
+                <p>Compare the news from different sources. Don't be locked in an echo chamber.<br>Resonante.</p>
             </md-card-content>
-            <md-card-footer>
-                Card footer
-            </md-card-footer>
+        </md-card>
+        <md-card class="card-home">
+            <md-icon ng-bind="'settings'"></md-icon>
+            <md-card-content>
+                <h2>Personalise</h2>
+                <p>Compare the news from different sources. Don't be locked in an echo chamber. Resonate.</p>
+            </md-card-content>
         </md-card>
     </div>
 </main>
