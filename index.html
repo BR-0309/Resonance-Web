@@ -8,18 +8,28 @@
 <!--[if gt IE 8]><!-->
 <html lang="en" ng-app="resonance-main" class="no-js"> <!--<![endif]-->
 <head>
+    <title>Resonance</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+          content="Compare news sources or just read what comes. Get out of the echo chamber, and start resonating!">
+    <meta name="author" content="Benjamin Raison">
+    <meta lang="en">
+
+    <link rel="icon" type="image/ico" href="favicon.ico">
+
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="app.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
 
     <!-- In production use:
    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -42,9 +52,10 @@
     <div id="banner" md-colors="{background: 'primary-700'}">
         <h1>Resonance</h1>
         <h3>Where no news is fake news. Probably</h3>
+        <md-button class="md-raised">Try it now!</md-button>
     </div>
 </header>
-<main class="md-padding" layout="row" layout-align="center center" layout="column" flex>
+<main class="md-padding" flex>
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
@@ -78,6 +89,9 @@
                 <p>Compare the news from different sources. Don't be locked in an echo chamber. Resonate.</p>
             </md-card-content>
         </md-card>
+    </div>
+    <div class="center" flex="grow">
+        <md-button class="md-raised md-primary">Try it now!</md-button>
     </div>
 </main>
 <footer>
