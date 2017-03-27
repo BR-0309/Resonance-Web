@@ -19,7 +19,7 @@ class Dispatcher
             $method = $uriFragments[2];
         }
         $args = array_slice($uriFragments, 3);
-        require_once "../Server/controller/$controllerName.php";
+        require_once "controller/$controllerName.php";
         $controller = new $controllerName();
         $controller->$method();
     }
