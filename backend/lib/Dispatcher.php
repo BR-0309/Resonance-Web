@@ -1,6 +1,9 @@
 <?php
+
+
 class Dispatcher
 {
+
     public static function dispatch()
     {
         $uri = $_SERVER['REQUEST_URI'];
@@ -14,12 +17,16 @@ class Dispatcher
             $controllerName = ucfirst($controllerName);
             $controllerName .= 'Controller';
         }
+
         $method = 'index';
         if (!empty($uriFragments[2])) {
             $method = $uriFragments[2];
         }
+
         $args = array_slice($uriFragments, 3);
+
         require_once "controller/$controllerName.php";
+
         $controller = new $controllerName();
         $controller->$method();
     }

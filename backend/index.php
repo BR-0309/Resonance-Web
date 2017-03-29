@@ -1,12 +1,16 @@
 <?php
-try {
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    echo "hi";
-    require_once 'lib/Dispatcher.php';
-    $dispatcher = new Dispatcher();
-    $dispatcher->dispatch();
-} catch(Exception $e) {
-    echo $e-getMessage();
+function handleError($exception)
+{
+    echo '{
+                "error": {
+                    "code": 404,
+                    "message": "Action not found"
+                 }
+           }';
+    exit(1);
 }
+
+set_error_handler('handleError');
+require_once 'lib/Dispatcher.php';
+$dispatcher = new Dispatcher();
+$dispatcher->dispatch();

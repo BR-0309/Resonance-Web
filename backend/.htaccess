@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^.*$ backend/index.php [PT,L]
+RewriteRule ^.*$ index.php [PT,L]
