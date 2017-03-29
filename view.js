@@ -8,7 +8,8 @@ var app = angular.module('resonance', [
 app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
 
-    $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.when("/news", {templateUrl: "news/news.html"})
+        .otherwise({redirectTo: '/news'});
 }]);
 app.controller('controllerSidenav', function ($scope, $mdSidenav) {
     $scope.openLeftMenu = function () {

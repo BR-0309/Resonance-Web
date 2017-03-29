@@ -33,6 +33,7 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
 
     <script src="view.js"></script>
+    <script src="news/news.js"></script>
 </head>
 <body ng-app="resonance" ng-cloak>
 <header ng-controller="controllerSidenav">
@@ -56,5 +57,12 @@
         </md-toolbar>
     </md-sidenav>
 </header>
+<main>
+    <a href="#news">News</a>
+    <div ng-view></div>
+</main>
+<footer>
+    <a href="/"><p>Copyright © 2017 Benjamin Raison</p></a>
+</footer>
 </body>
 </html>

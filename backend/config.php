@@ -4,6 +4,6 @@ return array(
         'host'     => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'resonance',
+        'database' => 'web',
     ),
 );
