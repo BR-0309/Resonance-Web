@@ -2,8 +2,8 @@
 return array(
     'database' => array(
         'host'     => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'web',
+        'username' => 'resonance',
+        'password' => 'Panzer',
+        'database' => 'resonance',
     ),
 );

@@ -1,6 +1,7 @@
 <?php
 
-//include '/backend/lib/ConnectionHandler.php';
+require_once 'lib/ConnectionHandler.php';
+require_once 'Objects.php';
 class ApiController
 {
 
@@ -24,11 +25,6 @@ class ApiController
               }';
     }
 
-    public function test()
-    {
-        echo "Hi";
-    }
-
     public function articles()
     {
         $excludeLanguages = '(0)';
@@ -36,11 +32,11 @@ class ApiController
         $limit = 20;
         $time = 'NOW()';
 
-        if (isset($_GET['limit']) && is_int($_GET['limit']) && $_GET['limit'] > 0) {
+        if (isset($_GET['limit']) && is_int((int)$_GET['limit']) && $_GET['limit'] > 0) {
             $limit = $_GET['limit'];
         }
 
-        if (isset($_GET['time']) && is_int($_GET['time'])) {
+        if (isset($_GET['time']) && is_int((int)$_GET['time'])) {
             if ($_GET['time'] <= 0) {
                 $time = 'NOW()';
             } else {
@@ -48,9 +44,9 @@ class ApiController
             }
         }
         if (isset($_GET['langs']) && preg_match('^(\d+(,\d+)*)?$', $_GET['langs'])) {
-
+            // TODO
         }
-        //$connection = ConnectionHandler::getConnection();
+        $connection = ConnectionHandler::getConnection();
         $excludeCountries = $connection->real_escape_string($excludeCountries);
         $excludeLanguages = $connection->real_escape_string($excludeLanguages);
         $time = $connection->real_escape_string($time);
@@ -76,8 +72,6 @@ class ApiController
                     $row['language_name'], $row['country_name']);
                 array_push($return, (array)$story);
             }
-        } else {
-            echo "Nothing";
         }
 
         $output = "[";
