@@ -23,26 +23,31 @@
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
 
-    <!-- In production use:
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-   -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-aria.min.js"></script>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
     <script src="view.js"></script>
     <script src="news/news.js"></script>
 </head>
 <body ng-app="resonance" ng-cloak>
-<header ng-controller="controllerSidenav">
+<header ng-controller="NavCtrl">
     <md-toolbar class="md-primary">
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
                 <md-icon ng-bind="'menu'"></md-icon>
             </md-button>
             <h2 flex md-truncate>Resonance</h2>
+            <span>
+                <md-button ng-if="isNews()" class="md-raised" ng-click="update()">Update!</md-button>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
+                    <md-icon ng-bind="'search'"></md-icon>
+                </md-button>
+            </span>
         </div>
     </md-toolbar>
 
@@ -58,7 +63,6 @@
     </md-sidenav>
 </header>
 <main>
-    <a href="#news">News</a>
     <div ng-view></div>
 </main>
 <footer>

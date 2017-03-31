@@ -11,10 +11,17 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
     $routeProvider.when("/news", {templateUrl: "news/news.html"})
         .otherwise({redirectTo: '/news'});
 }]);
-app.controller('controllerSidenav', function ($scope, $mdSidenav) {
+app.controller('NavCtrl', function ($scope, $location, $mdSidenav) {
     $scope.openLeftMenu = function () {
         $mdSidenav('left').toggle();
     };
+    $scope.isNews = function () {
+        if ($location.path() === "/news") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 });
 
 app.config(function ($mdThemingProvider) {

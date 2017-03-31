@@ -1,0 +1,11 @@
+html {
+    overflow: hidden;
+}
+
+iframe {
+    padding: 0;
+    height: calc(100% - 100px);
+    overflow: hidden;
+    border: none;
+    width: 100%;
+}
