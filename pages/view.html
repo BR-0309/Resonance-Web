@@ -1,6 +1,7 @@
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app="resonance" lang="en">
 <head>
-    <title>News | Resonance</title>
+    <title>{{page}} | Resonance</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,6 @@
     <meta name="description"
           content="Compare news sources or just read what comes. Get out of the echo chamber, and start resonating!">
     <meta name="author" content="Benjamin Raison">
-    <meta lang="en">
 
     <link rel="icon" type="image/ico" href="../favicon.ico">
 
@@ -34,9 +34,10 @@
     <script src="view.js"></script>
     <script src="news/news.js"></script>
     <script src="about/about.js"></script>
+    <script src="contact/contact.js"></script>
 
 </head>
-<body ng-app="resonance" ng-cloak>
+<body ng-cloak>
 <header ng-controller="NavCtrl">
     <md-toolbar class="md-primary">
         <div class="md-toolbar-tools">
@@ -48,8 +49,11 @@
                 <md-button class="md-icon-button" ng-click="update()">
                     <md-icon ng-bind="'update'"></md-icon>
                 </md-button>
-                    <md-button class="md-icon-button" aria-label="Search for this" ng-click="search()">
+                <md-button class="md-icon-button" aria-label="Search for this" ng-click="search()">
                     <md-icon ng-bind="'public'"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Visit source" ng-click="source()">
+                    <md-icon ng-bind="'web'"></md-icon>
                 </md-button>
             </span>
 

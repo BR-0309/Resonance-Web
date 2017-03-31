@@ -4,7 +4,8 @@ angular.module('resonance', [
     'ngRoute',
     'ngMaterial',
     'resonance.news',
-    'resonance.about'
+    'resonance.about',
+    'resonance.contact'
 ])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
@@ -15,7 +16,11 @@ angular.module('resonance', [
         }).when('/about', {
             templateUrl: 'about/about.html',
             controller: 'AboutCtrl'
-        }).otherwise({redirectTo: '/news'});
+        }).when('/contact', {
+            templateUrl: 'contact/contact.html',
+            controller: 'ContactCtrl'
+        })
+            .otherwise({redirectTo: '/news'});
     }])
     .config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
@@ -46,8 +51,18 @@ angular.module('resonance', [
         $scope.isNews = function () {
             return $location.path() === "/news";
         };
+        $scope.isAbout = function () {
+            return $location.path() === "/about";
+        };
+        $scope.isContact = function () {
+            return $location.path() === "/contact";
+        };
         $scope.search = function () {
             // Does a Google news search in a new browser tab
             $window.open('https://www.google.com/search?q=' + $rootScope.title + '&tbm=nws&*', '_blank');
+        };
+        $scope.source = function () {
+            // Does a Google news search in a new browser tab
+            $window.open($rootScope.site, '_blank');
         };
     }]);

@@ -16,4 +16,5 @@ angular.module('resonance.news', ['ngRoute'])
         // Don't ask. It works. It makes three requests.
         $scope.update();
         $scope.update();
+        $rootScope.page = "News"
     }]);
