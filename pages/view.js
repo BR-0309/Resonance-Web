@@ -24,10 +24,13 @@ angular.module('resonance', [
             'self',
             'https://www.google.**',
             'http://*.bbc.com/**',
+            'http://www.bbc.co.uk/**',
+            'http://*.bbc.co.uk/**',
             'http://www.bbc.com/**',
             'http://www.dailymail.co.uk/**',
             'http://www.srf.ch/**',
-            'http://www.faz.net/**'
+            'http://www.faz.net/**',
+            'http://www.srf.ch/**'
         ]);
     })
     .controller('NavCtrl', ['$scope', '$rootScope', '$location', '$mdSidenav', '$window', function ($scope, $rootScope, $location, $mdSidenav, $window) {
@@ -38,6 +41,7 @@ angular.module('resonance', [
             return $location.path() === "/news";
         };
         $scope.search = function () {
-            $window.open('https://www.google.com/search?q=' + $rootScope.title, '_blank');
+            // Does a Google news search in a new browser tab
+            $window.open('https://www.google.com/search?q=' + $rootScope.title + '&tbm=nws&*', '_blank');
         };
     }]);
