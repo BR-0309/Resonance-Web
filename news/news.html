@@ -1,2 +1,4 @@
 <link rel="stylesheet" href="news/news.css">
-<iframe ng-src="http://www.bbc.com/news"></iframe>
+<div ng-controller="NewsCtrl" data-ng-init="init()">
+    <iframe ng-src={{site}}></iframe>
+</div>
