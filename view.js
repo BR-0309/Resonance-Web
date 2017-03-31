@@ -23,13 +23,14 @@ angular.module('resonance', [
         $sceDelegateProvider.resourceUrlWhitelist([
             'self',
             'https://www.google.**',
+            'http://*.bbc.com/**',
             'http://www.bbc.com/**',
             'http://www.dailymail.co.uk/**',
             'http://www.srf.ch/**',
             'http://www.faz.net/**'
         ]);
     })
-    .controller('NavCtrl', ['$scope', '$location', '$mdSidenav', function ($scope, $location, $mdSidenav) {
+    .controller('NavCtrl', ['$scope', '$rootScope', '$location', '$mdSidenav', '$window', function ($scope, $rootScope, $location, $mdSidenav, $window) {
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
@@ -37,6 +38,6 @@ angular.module('resonance', [
             return $location.path() === "/news";
         };
         $scope.search = function () {
-
+            $window.open('https://www.google.com/search?q=' + $rootScope.title, '_blank');
         };
     }]);

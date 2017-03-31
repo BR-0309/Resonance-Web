@@ -42,14 +42,15 @@
                 <md-icon ng-bind="'menu'"></md-icon>
             </md-button>
             <h2 flex md-truncate>Resonance</h2>
-            <span>
-                <span ng-if="isNews()" ng-controller="NewsCtrl">
-                <md-button class="md-raised" ng-click="update()">Update!</md-button>
-                </span>
-                    <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
-                    <md-icon ng-bind="'search'"></md-icon>
+            <span ng-if="isNews()" ng-controller="NewsCtrl">
+                <md-button class="md-icon-button" ng-click="update()">
+                    <md-icon ng-bind="'update'"></md-icon>
+                </md-button>
+                    <md-button class="md-icon-button" aria-label="Search for this" ng-click="search()">
+                    <md-icon ng-bind="'public'"></md-icon>
                 </md-button>
             </span>
+
         </div>
     </md-toolbar>
 
