@@ -3,13 +3,19 @@
 angular.module('resonance', [
     'ngRoute',
     'ngMaterial',
-    'resonance.news'
+    'resonance.news',
+    'resonance.about'
 ])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 
-        $routeProvider.when("/news", {templateUrl: "news/news.html"})
-            .otherwise({redirectTo: '/news'});
+        $routeProvider.when('/news', {
+            templateUrl: 'news/news.html',
+            controller: 'NewsCtrl'
+        }).when('/about', {
+            templateUrl: 'about/about.html',
+            controller: 'AboutCtrl'
+        }).otherwise({redirectTo: '/news'});
     }])
     .config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
