@@ -33,6 +33,7 @@ class ContactController {
                     "message": "' . $message . '"
                  }
               }';
+        header("Location: /pages#!/contact");
         exit();
     }
 
