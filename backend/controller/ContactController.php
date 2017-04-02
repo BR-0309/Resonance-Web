@@ -21,6 +21,9 @@ class ContactController {
                     "message": "Message sent!"
                  }
               }';
+              // TEMP
+              header("Location: /pages#!/contact");
+              exit();
         } else {
             $this->error('Missing parameters');
         }
@@ -33,6 +36,7 @@ class ContactController {
                     "message": "' . $message . '"
                  }
               }';
+        //TEMP
         header("Location: /pages#!/contact");
         exit();
     }
