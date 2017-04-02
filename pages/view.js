@@ -44,8 +44,12 @@ angular.module('resonance', [
         ]);
     })
     .controller('NavCtrl', ['$scope', '$rootScope', '$location', '$mdSidenav', '$window', function ($scope, $rootScope, $location, $mdSidenav, $window) {
-        $scope.openLeftMenu = function () {
+        $scope.toggleLeftMenu = function () {
             $mdSidenav('left').toggle();
+        };
+        $scope.navigate = function (path) {
+            $window.open(path, '_self');
+            console.log(path);
         };
         $scope.isNews = function () {
             return $location.path() === "/news";
