@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="home/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+    <link rel="stylesheet" href="view.css">
 
 </head>
 <body ng-cloak>
@@ -70,15 +71,18 @@
                     <p>Home</p>
                 </md-list-item>
                 <md-divider></md-divider>
-                <md-list-item class="md-2-line" ng-click="navigate('/pages/#!/news'); toggleLeftMenu()">
+                <md-list-item class="md-2-line" ng-class="getNavClass('/news')"
+                              ng-click="navigate('/pages/#!/news'); toggleLeftMenu()">
                     <p>News</p>
                 </md-list-item>
                 <md-divider></md-divider>
-                <md-list-item class="md-2-line" ng-click="navigate('/pages/#!/contact'); toggleLeftMenu()">
+                <md-list-item class="md-2-line" ng-class="getNavClass('/contact')"
+                              ng-click="navigate('/pages/#!/contact'); toggleLeftMenu()">
                     <p>Contact</p>
                 </md-list-item>
                 <md-divider></md-divider>
-                <md-list-item class="md-2-line" ng-click="navigate('/pages/#!/about'); toggleLeftMenu()">
+                <md-list-item class="md-2-line" ng-class="getNavClass('/about')"
+                              ng-click="navigate('/pages/#!/about'); toggleLeftMenu()">
                     <p>About</p>
                 </md-list-item>
                 <md-divider></md-divider>

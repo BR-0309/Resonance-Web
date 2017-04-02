@@ -68,4 +68,15 @@ angular.module('resonance', [
             // Opens the original page in a new tab
             $window.open($rootScope.site, '_blank');
         };
+        $scope.getNavClass = function (target) {
+            if (target === "/news" && $scope.isNews()) {
+                return "nav-active";
+            } else if (target === "/about" && $scope.isAbout()) {
+                return 'nav-active';
+            } else if (target === "/contact" && $scope.isContact()) {
+                return 'nav-active';
+            } else {
+                return '';
+            }
+        }
     }]);
