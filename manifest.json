@@ -1,0 +1,10 @@
+{
+  "name": "Resonance",
+  "short_name": "Resonance",
+  "start_url": "/pages/#!/news",
+  "background_color": "#00897b",
+  "theme_color": "#00897b",
+  "description": "Random news",
+  "display": "standalone",
+  "orientation": "portrait"
+}
