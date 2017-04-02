@@ -39,9 +39,8 @@ angular.module('resonance', [
             'http://*.bbc.co.uk/**',
             'http://www.bbc.com/**',
             'http://www.dailymail.co.uk/**',
-            'http://www.srf.ch/**',
             'http://www.faz.net/**',
-            'http://www.srf.ch/**'
+            'https://www.srf.ch/**'
         ]);
     })
     .controller('NavCtrl', ['$scope', '$rootScope', '$location', '$mdSidenav', '$window', function ($scope, $rootScope, $location, $mdSidenav, $window) {
@@ -62,7 +61,7 @@ angular.module('resonance', [
             $window.open('https://www.google.com/search?q=' + $rootScope.title + '&tbm=nws&*', '_blank');
         };
         $scope.source = function () {
-            // Does a Google news search in a new browser tab
+            // Opens the original page in a new tab
             $window.open($rootScope.site, '_blank');
         };
     }]);
