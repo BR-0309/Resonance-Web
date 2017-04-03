@@ -42,7 +42,7 @@
                                         short!
                                     </div>
                                     <div ng-message="email" ng-show="contactForm.email.$error.email">Invalid e-mail
-                                        address
+                                        address!
                                     </div>
                                 </div>
                             </md-input-container>
@@ -51,7 +51,7 @@
                             <md-input-container flex="100">
                                 <label>Text</label>
                                 <textarea rows="8" name="text" ng-model="text" minlength="20" md-maxlength="1000"
-                                          ng-maxlength="1000"></textarea>
+                                          ng-maxlength="1000" required></textarea>
                                 <div ng-messages="contactForm.text.$error">
                                     <div ng-message="required" ng-show="contactForm.text.$error.required">This is
                                         required!
