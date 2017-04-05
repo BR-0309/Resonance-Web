@@ -2,7 +2,7 @@
 
 require_once 'lib/ConnectionHandler.php';
 require_once 'Objects.php';
-class ApiController
+class ControllerApi
 {
 
     function endsWith($haystack, $needle)
@@ -81,7 +81,7 @@ class ApiController
                 $output = $output . $encoded . ",";
             }
         }
-        if (ApiController::endsWith($output, ",")) {
+        if (ControllerApi::endsWith($output, ",")) {
             $output = substr($output, 0, strlen($output) - 1);
         }
         $output = $output . "]";

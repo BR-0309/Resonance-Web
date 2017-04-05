@@ -1,21 +1,21 @@
 <?php
 
 
-class Dispatcher
+class Router
 {
 
-    public static function dispatch()
+    public static function route()
     {
         $uri = $_SERVER['REQUEST_URI'];
         $uri = strtok($uri, '?');
         $uri = trim($uri, '/');
         $uriFragments = explode('/', $uri);
 
-        $controllerName = 'DefaultController';
+        $controllerName = 'ControllerBase';
         if (!empty($uriFragments[1])) {
             $controllerName = $uriFragments[1];
             $controllerName = ucfirst($controllerName);
-            $controllerName .= 'Controller';
+            $controllerName = 'Controller' . $controllerName;
         }
 
         $method = 'index';

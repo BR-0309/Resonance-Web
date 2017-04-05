@@ -1,6 +1,6 @@
 <?php
 
-class DefaultController
+class ControllerBase
 {
 
     public function index()
