@@ -9,7 +9,6 @@ angular.module('resonance.news', ['ngRoute'])
                 $http.get('/backend/api/articles?limit=1').then(function (res) {
                     $rootScope.site = res.data[0].url;
                     $rootScope.title = res.data[0].title;
-                    console.log("executed");
                 })
             };
         };

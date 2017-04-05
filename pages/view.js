@@ -40,7 +40,8 @@ angular.module('resonance', [
             'http://www.bbc.com/**',
             'http://www.dailymail.co.uk/**',
             'http://www.faz.net/**',
-            'https://www.srf.ch/**'
+            'https://www.srf.ch/**',
+            'http://www.srf.ch/**'
         ]);
     })
     .controller('NavCtrl', ['$scope', '$rootScope', '$location', '$mdSidenav', '$window', function ($scope, $rootScope, $location, $mdSidenav, $window) {
@@ -49,7 +50,6 @@ angular.module('resonance', [
         };
         $scope.navigate = function (path) {
             $window.open(path, '_self');
-            console.log(path);
         };
         $scope.isNews = function () {
             return $location.path() === "/news";

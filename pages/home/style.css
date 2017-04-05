@@ -16,6 +16,10 @@ HEADER
     padding: 70px 0;
 }
 
+md-tooltip {
+    margin-top: 7px;
+}
+
 /*
 MAIN CONTENT
 =======================================
