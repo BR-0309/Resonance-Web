@@ -41,7 +41,8 @@ angular.module('resonance', [
             'http://www.dailymail.co.uk/**',
             'http://www.faz.net/**',
             'https://www.srf.ch/**',
-            'http://www.srf.ch/**'
+            'http://www.srf.ch/**',
+            'https://www.theguardian.com/**'
         ]);
     })
     .controller('NavCtrl', ['$scope', '$rootScope', '$location', '$mdSidenav', '$window', function ($scope, $rootScope, $location, $mdSidenav, $window) {
