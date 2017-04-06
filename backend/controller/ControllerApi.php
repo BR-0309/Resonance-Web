@@ -1,7 +1,7 @@
 <?php
 
 require_once 'lib/ConnectionHandler.php';
-require_once 'Objects.php';
+require_once 'Story.php';
 require_once 'repository/RepositoryArticle.php';
 class ControllerApi
 {
@@ -40,5 +40,6 @@ class ControllerApi
         $repo = new RepositoryArticle();
         echo $repo->getArticlesAsJson($langs, $countries, $time, $limit);
     }
+
 
 }

@@ -1,6 +1,6 @@
 <?php
 require_once 'lib/Repository.php';
-require_once 'StringUtil.php';
+require_once 'Util.php';
 
 class RepositoryArticle extends Repository
 {
@@ -29,13 +29,13 @@ class RepositoryArticle extends Repository
         $return = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $story = new story($row['title'], $row['recorded'], $row['news_url'], $row['section_name'], $row['source_name'],
-                    $row['language_name'], $row['country_name']);
+                $story = new Story($row['title'], $row['recorded'], $row['news_url'], $row['section_name'], $row['source_name'],
+                    $row['language_name'], $row['country_name'], Util::allowsXframe($row['news_url']));
                 array_push($return, (array)$story);
             }
         }
 
-        return StringUtil::arrayToJson($return);
+        return Util::arrayToJson($return);
     }
 
 }

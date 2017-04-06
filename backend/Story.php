@@ -1,6 +1,6 @@
 <?php
 
-class story
+class Story
 {
     public $title;
     public $recorded;
@@ -9,8 +9,9 @@ class story
     public $source;
     public $language;
     public $country;
+    public $xframe;
 
-    public function __construct($title, $recorded, $url, $section, $source, $language, $country)
+    public function __construct($title, $recorded, $url, $section, $source, $language, $country, $xframe)
     {
         $this->title = $title;
         $this->recorded = $recorded;
@@ -19,6 +20,7 @@ class story
         $this->source = $source;
         $this->language = $language;
         $this->country = $country;
+        $this->xframe = $xframe;
     }
 
     public function getTitle()
@@ -89,5 +91,15 @@ class story
     public function setCountry($country)
     {
         $this->country = $country;
+    }
+
+    public function allowsXframe()
+    {
+        return $this->xframe;
+    }
+
+    public function setXframe($xframe)
+    {
+        $this->xframe = $xframe;
     }
 }

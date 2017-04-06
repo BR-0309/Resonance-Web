@@ -1,6 +1,6 @@
 <?php
 
-class StringUtil
+class Util
 {
     public static function arrayToJson($array)
     {
@@ -11,7 +11,7 @@ class StringUtil
                 $output = $output . $encoded . ",";
             }
         }
-        if (StringUtil::endsWith($output, ",")) {
+        if (Util::endsWith($output, ",")) {
             $output = substr($output, 0, strlen($output) - 1);
         }
         $output = $output . "]";
@@ -25,6 +25,18 @@ class StringUtil
             return true;
         }
         return (substr($haystack, -$length) === $needle);
+    }
+
+    public static function allowsXFrame($url)
+    {
+
+        file_get_contents($url);
+        foreach ($http_response_header as $value) {
+            if (strcmp($value, "X-Frame-Options: SAMEORIGIN") == 0 || strcmp($value, "X-Frame-Options: DENY") == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="news/news.css">
 <div ng-controller="NewsCtrl" data-ng-init="init()">
-    <iframe ng-src={{site}}>{{site}}</iframe>
+    <iframe id="frame" ng-if="valid"></iframe>
+    <div ng-include="'news/error.html'"></div>
 </div>
