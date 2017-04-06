@@ -5,12 +5,17 @@ class ControllerBase
 
     public function index()
     {
-        echo '{
-                "error": {
-                    "code": 404,
-                    "message": "Function not found"
-                 }
-              }';
+        $this->error(404, "Function not found");
+    }
+
+    public function error($errorcode, $errormessage)
+    {
+        echo '{		
+                 "error": {
+                     "code": {$errorcode] ,		
+                     "message": "{$errormessage}"		
+                  }		
+               }';
     }
 
 }
