@@ -8,13 +8,13 @@ class ContactController extends ControllerBase
     {
         if (isset($_POST['name'], $_POST['email'], $_POST['text'])) {
             if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-                $this->error(2, "Invalid Email");
+                $this->error(400, "Invalid Email");
             }
             if (strlen($_POST['name']) < 4) {
-                $this->error(3, 'Name too short');
+                $this->error(400, 'Name too short');
             }
             if (strlen($_POST['text']) < 20) {
-                $this->error(4, 'Message too short');
+                $this->error(400, 'Message too short');
             }
             $repo = new ContactRepository();
             $repo->create($_POST['name'], $_POST['email'], $_POST['text']);
