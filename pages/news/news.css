@@ -9,3 +9,10 @@ iframe {
     border: none;
     width: 100%;
 }
+
+.error {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: calc(100vh - 100px);
+    font-size: 2em;
+}

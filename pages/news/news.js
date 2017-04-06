@@ -7,13 +7,14 @@ function test2() {
 angular.module('resonance.news', ['ngRoute'])
     .controller('NewsCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
         $scope.update = function () {
-            $scope.valid = true;
+            $rootScope.valid = true;
             $rootScope.site = '';
             $rootScope.title = '';
             $scope.update = function () {
                 $http.get('/backend/api/articles?limit=1').then(function (res) {
-                    $scope.valid = res.data[0].xframe;
-                    console.info($scope.valid);
+                    $rootScope.valid = res.data[0].xframe;
+                    console.info($rootScope.valid);
+                    console.info(res.data[0].xframe);
                     $rootScope.site = res.data[0].url;
                     $rootScope.title = res.data[0].title;
                 })
