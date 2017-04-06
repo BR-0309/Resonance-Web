@@ -1,5 +1,6 @@
 <?php
 require_once 'repository/ContactRepository.php';
+require_once 'controller/ControllerBase.php';
 
 class ContactController extends ControllerBase
 {

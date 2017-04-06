@@ -3,6 +3,7 @@
 require_once 'lib/ConnectionHandler.php';
 require_once 'Story.php';
 require_once 'repository/RepositoryArticle.php';
+require_once 'controller/ControllerBase.php';
 class ControllerApi extends ControllerBase
 {
 
