@@ -5,12 +5,12 @@ class ControllerBase
 
     public function index()
     {
-        echo '{
-                "error": {
-                    "code": 404,
-                    "message": "Function not found"
-                 }
-              }';
+        $this->error(1,"ErrorHandler not called right");
+    }
+
+    public function error($errorcode, $errormessage)
+    {
+        echo "Code: " . $errorcode . "<br>" . "Message: " . "<br>" . $errormessage;
     }
 
 }

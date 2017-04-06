@@ -1,44 +1,31 @@
 <?php
 require_once 'repository/ContactRepository.php';
-class ContactController {
 
-    public function index() {
-        if(isset($_POST['name'], $_POST['email'], $_POST['text'])) {
-            if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-                $this->error('Invalid e-mail address');
+class ContactController extends ControllerBase
+{
+
+    public function index()
+    {
+        if (isset($_POST['name'], $_POST['email'], $_POST['text'])) {
+            if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                $this->error(2, "Invalid Email");
             }
-            if(strlen($_POST['name']) < 4) {
-                $this->error('Name too short');
+            if (strlen($_POST['name']) < 4) {
+                $this->error(3, 'Name too short');
             }
-            if(strlen($_POST['text']) < 20) {
-                $this->error('Message too short');
+            if (strlen($_POST['text']) < 20) {
+                $this->error(4, 'Message too short');
             }
             $repo = new ContactRepository();
             $repo->create($_POST['name'], $_POST['email'], $_POST['text']);
-            echo '{
-                "sucess": {
-                    "code": 200,
-                    "message": "Message sent!"
-                 }
-              }';
-              // TEMP
-              header("Location: /pages#!/contact");
-              exit();
-        } else {
-            $this->error('Missing parameters');
-        }
-    }
+            $this->error(200, "Message sent");
 
-    private function error($message) {
-        echo '{
-                "error": {
-                    "code": 400,
-                    "message": "' . $message . '"
-                 }
-              }';
-        //TEMP
-        header("Location: /pages#!/contact");
-        exit();
+            // TEMP
+            header("Location: /pages#!/contact");
+            exit();
+        } else {
+            $this->error(2, 'Missing parameters');
+        }
     }
 
 }

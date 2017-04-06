@@ -3,19 +3,13 @@
 require_once 'lib/ConnectionHandler.php';
 require_once 'Story.php';
 require_once 'repository/RepositoryArticle.php';
-class ControllerApi
+class ControllerApi extends ControllerBase
 {
 
     public function index()
     {
-        echo '{
-                "error": {
-                    "code": 404,
-                    "message": "Function not found"
-                 }
-              }';
-    }
-
+        $this->error(5, "Method not implemented");
+}
     public function articles()
     {
         $langs = '(1,2,3,4,5,6,7,8,9)';
