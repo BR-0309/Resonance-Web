@@ -46,15 +46,15 @@
             <span ng-if="isNews()" ng-controller="NewsCtrl">
                 <md-button class="md-icon-button" ng-click="update()">
                     <md-icon ng-bind="'update'"></md-icon>
-                    <md-tooltip>New article</md-tooltip>
+                    <md-tooltip md-delay="100">New article</md-tooltip>
                 </md-button>
                 <md-button class="md-icon-button" aria-label="Search for this" ng-click="search()">
                     <md-icon ng-bind="'public'"></md-icon>
-                    <md-tooltip>Search for this</md-tooltip>
+                    <md-tooltip md-delay="100">Search for this</md-tooltip>
                 </md-button>
                 <md-button class="md-icon-button" aria-label="Visit source" ng-click="source()">
                     <md-icon ng-bind="'web'"></md-icon>
-                    <md-tooltip>Visit source</md-tooltip>
+                    <md-tooltip md-delay="100">Visit source</md-tooltip>
                 </md-button>
             </span>
 
