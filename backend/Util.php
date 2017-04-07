@@ -44,7 +44,7 @@ class Util
     public static function returnMessage($code, $message)
     {
         echo "{	\"error\": { \"code\": {$code}, \"message\": \"{$message}\" } }";
-        //exit();
+        exit();
     }
 
 }

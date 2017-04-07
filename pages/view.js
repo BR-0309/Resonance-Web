@@ -19,8 +19,7 @@ angular.module('resonance', [
         }).when('/contact', {
             templateUrl: 'contact/contact.html',
             controller: 'ContactCtrl'
-        })
-            .otherwise({redirectTo: '/news'});
+        }).otherwise({redirectTo: '/news'});
     }])
     .config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
