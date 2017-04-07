@@ -7,14 +7,10 @@ require_once 'controller/ControllerBase.php';
 class ControllerApi extends ControllerBase
 {
 
-    public function index()
-    {
-        $this->error(5, "Method not implemented");
-}
     public function articles()
     {
-        $langs = '(1,2,3,4,5,6,7,8,9)';
-        $countries = '(1,2,3,4,5,6,7,8,9)';
+        $langs = '(1,2,3,4,5,6,7,8,9)'; // TEMP
+        $countries = '(1,2,3,4,5,6,7,8,9)'; // TEMP
         $limit = 20;
         $time = 'NOW()';
 
@@ -24,7 +20,7 @@ class ControllerApi extends ControllerBase
 
         if (isset($_GET['time']) && is_int((int)$_GET['time'])) {
             if ($_GET['time'] <= 0) {
-                $time = 'NOW()';
+                $time = 'NOW()'; // For all time
             } else {
                 $time = $_GET['time'];
             }

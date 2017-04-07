@@ -29,7 +29,7 @@ class Util
 
     public static function allowsXFrame($url)
     {
-        if(substr( $url, 0, 7 ) === "http://") {
+        if (substr($url, 0, 7) === "http://") {
             return false;
         }
         file_get_contents($url);
@@ -39,6 +39,12 @@ class Util
             }
         }
         return true;
+    }
+
+    public static function returnMessage($code, $message)
+    {
+        echo "{	\"error\": { \"code\": {$code}, \"message\": \"{$message}\" } }";
+        //exit();
     }
 
 }

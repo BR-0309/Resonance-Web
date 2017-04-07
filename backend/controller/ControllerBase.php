@@ -5,17 +5,8 @@ class ControllerBase
 
     public function index()
     {
-        $this->error(404, "Function not found");
+        Util::returnMessage(404, "Action not found");
     }
 
-    public function error($errorcode, $errormessage)
-    {
-        echo '{		
-                 "error": {
-                     "code": {$errorcode] ,		
-                     "message": "{$errormessage}"		
-                  }		
-               }';
-    }
 
 }

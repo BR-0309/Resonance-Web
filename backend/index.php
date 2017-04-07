@@ -1,13 +1,9 @@
 <?php
+require_once 'Util.php';
 function handleError($exception)
 {
-    echo '{
-                "error": {
-                    "code": 404,
-                    "message": "Unknown error occured"
-                 }
-           }';
-    //exit(1);
+    var_dump($exception);
+    Util::returnMessage(500, "Unknown error occurred");
 }
 set_error_handler('handleError');
 error_reporting(E_ALL);

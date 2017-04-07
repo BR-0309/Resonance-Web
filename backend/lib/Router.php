@@ -25,9 +25,16 @@ class Router
 
         $args = array_slice($uriFragments, 3);
 
-        require_once "controller/$controllerName.php";
-
+        try {
+            require_once "controller/$controllerName.php";
+        } catch (Exception $e) {
+            Util::returnMessage(404, "Controller not found");
+        }
         $controller = new $controllerName();
-        $controller->$method();
+        try {
+            $controller->$method();
+        } catch (Exception $e) {
+            Util::returnMessage(404, "Action not found");
+        }
     }
 }
