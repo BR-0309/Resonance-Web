@@ -10,6 +10,7 @@ angular.module('resonance.news', ['ngRoute'])
             $rootScope.valid = true;
             $rootScope.site = '';
             $rootScope.title = '';
+            $rootScope.source = '';
             $scope.update = function () {
                 $http.get('/backend/api/articles?limit=1').then(function (res) {
                     $rootScope.valid = res.data[0].xframe;
@@ -17,6 +18,7 @@ angular.module('resonance.news', ['ngRoute'])
                     console.info(res.data[0].xframe);
                     $rootScope.site = res.data[0].url;
                     $rootScope.title = res.data[0].title;
+                    $rootScope.source = res.data[0].source;
                 })
             };
         };
