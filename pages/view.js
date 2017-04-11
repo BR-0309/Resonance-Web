@@ -48,7 +48,7 @@ angular.module('resonance', [
         $scope.toggleLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
-        $scope.navigate = function (path) {
+        $scope.navigateLocal = function (path) {
             $window.open(path, '_self');
         };
         $scope.isNews = function () {
@@ -59,14 +59,6 @@ angular.module('resonance', [
         };
         $scope.isContact = function () {
             return $location.path() === "/contact";
-        };
-        $scope.search = function () {
-            // Does a Google news search in a new browser tab
-            $window.open('https://www.google.com/search?q=' + $rootScope.title + '&tbm=nws&*', '_blank');
-        };
-        $scope.source = function () {
-            // Opens the original page in a new tab
-            $window.open($rootScope.site, '_blank');
         };
         $scope.getNavClass = function (target) {
             if (target === "/news" && $scope.isNews()) {

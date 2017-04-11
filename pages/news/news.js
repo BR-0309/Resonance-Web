@@ -5,29 +5,21 @@ function test2() {
 }
 
 angular.module('resonance.news', ['ngRoute'])
-    .controller('NewsCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+    .controller('NewsCtrl', ['$scope', '$rootScope', '$http', '$window', function ($scope, $rootScope, $http, $window) {
+        $scope.articles = null;
         $scope.update = function () {
-            $rootScope.valid = true;
-            $rootScope.site = '';
-            $rootScope.title = '';
-            $rootScope.source = '';
             $scope.update = function () {
-                $http.get('/backend/api/articles?limit=1').then(function (res) {
-                    $rootScope.valid = res.data[0].xframe;
-                    console.info($rootScope.valid);
-                    console.info(res.data[0].xframe);
-                    $rootScope.site = res.data[0].url;
-                    $rootScope.title = res.data[0].title;
-                    $rootScope.source = res.data[0].source;
+                $http.get('/backend/api/articles?limit=16').then(function (res) {
+                    $scope.articles = res.data;
                 })
             };
         };
-
         $scope.test = function () {
             console.log("test");
-            $scope.valid = false;
         };
-
+        $scope.viewStory = function (path) {
+            $window.open(path, '_blank');
+        };
         // Don't ask. It works. It makes three requests.
         $scope.update();
         $scope.update();

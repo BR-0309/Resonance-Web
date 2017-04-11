@@ -27,6 +27,7 @@
     <link rel="icon" type="image/ico" href="../favicon.ico">
     <link rel="manifest" href="../manifest.json">
 
+
     <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="home/style.css">
@@ -37,27 +38,12 @@
 </head>
 <body ng-cloak>
 <header ng-controller="NavCtrl">
-    <md-toolbar class="md-primary">
+    <md-toolbar style="position: fixed" class="md-primary">
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeftMenu()">
                 <md-icon ng-bind="'menu'"></md-icon>
             </md-button>
             <h2 flex md-truncate>Resonance</h2>
-            <span ng-if="isNews()" ng-controller="NewsCtrl">
-                <md-button class="md-icon-button" ng-click="update()">
-                    <md-icon ng-bind="'update'"></md-icon>
-                    <md-tooltip md-delay="100">New article</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="Search for this" ng-click="search()">
-                    <md-icon ng-bind="'public'"></md-icon>
-                    <md-tooltip md-delay="100">Search for this</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="Visit source" ng-click="source()">
-                    <md-icon ng-bind="'web'"></md-icon>
-                    <md-tooltip md-delay="100">Visit source</md-tooltip>
-                </md-button>
-            </span>
-
         </div>
     </md-toolbar>
 
@@ -72,22 +58,22 @@
         </md-toolbar>
         <nav>
             <md-list style="padding: 0;">
-                <md-list-item class="md-2-line" ng-click="navigate('/')">
+                <md-list-item class="md-2-line" ng-click="navigateLocal('/')">
                     <p>Home</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item class="md-2-line" ng-class="getNavClass('/news')"
-                              ng-click="navigate('/pages/#!/news'); toggleLeftMenu()">
+                              ng-click="navigateLocal('/pages/#!/news'); toggleLeftMenu()">
                     <p>News</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item class="md-2-line" ng-class="getNavClass('/contact')"
-                              ng-click="navigate('/pages/#!/contact'); toggleLeftMenu()">
+                              ng-click="navigateLocal('/pages/#!/contact'); toggleLeftMenu()">
                     <p>Contact</p>
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-list-item class="md-2-line" ng-class="getNavClass('/about')"
-                              ng-click="navigate('/pages/#!/about'); toggleLeftMenu()">
+                              ng-click="navigateLocal('/pages/#!/about'); toggleLeftMenu()">
                     <p>About</p>
                 </md-list-item>
                 <md-divider></md-divider>
@@ -96,7 +82,7 @@
     </md-sidenav>
 </header>
 <main>
-    <div ng-view></div>
+    <div ng-view class="content"></div>
 </main>
 <footer>
     <a href="/"><p>Copyright © 2017 Benjamin Raison</p></a>

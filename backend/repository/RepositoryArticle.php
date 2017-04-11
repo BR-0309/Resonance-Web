@@ -30,7 +30,7 @@ class RepositoryArticle extends Repository
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $story = new Story($row['title'], $row['recorded'], $row['news_url'], $row['section_name'], $row['source_name'],
-                    $row['language_name'], $row['country_name'], Util::allowsXframe($row['news_url']));
+                    $row['language_name'], $row['country_name']);
                 array_push($return, (array)$story);
             }
         }

@@ -9,9 +9,8 @@ class Story
     public $source;
     public $language;
     public $country;
-    public $xframe;
 
-    public function __construct($title, $recorded, $url, $section, $source, $language, $country, $xframe)
+    public function __construct($title, $recorded, $url, $section, $source, $language, $country)
     {
         $this->title = $title;
         $this->recorded = $recorded;
@@ -20,7 +19,6 @@ class Story
         $this->source = $source;
         $this->language = $language;
         $this->country = $country;
-        $this->xframe = $xframe;
     }
 
     public function getTitle()
@@ -93,13 +91,4 @@ class Story
         $this->country = $country;
     }
 
-    public function allowsXframe()
-    {
-        return $this->xframe;
-    }
-
-    public function setXframe($xframe)
-    {
-        $this->xframe = $xframe;
-    }
 }

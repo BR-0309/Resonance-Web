@@ -27,20 +27,6 @@ class Util
         return (substr($haystack, -$length) === $needle);
     }
 
-    public static function allowsXFrame($url)
-    {
-        if (substr($url, 0, 7) === "http://") {
-            return false;
-        }
-        file_get_contents($url);
-        foreach ($http_response_header as $value) {
-            if (strcmp($value, "X-Frame-Options: SAMEORIGIN") == 0 || strcmp($value, "X-Frame-Options: DENY") == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public static function returnMessage($code, $message)
     {
         echo "{	\"error\": { \"code\": {$code}, \"message\": \"{$message}\" } }";
