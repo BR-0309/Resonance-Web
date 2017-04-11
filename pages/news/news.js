@@ -9,8 +9,12 @@ angular.module('resonance.news', ['ngRoute'])
         $scope.articles = null;
         $scope.update = function () {
             $scope.update = function () {
-                $http.get('/backend/api/articles?limit=16').then(function (res) {
-                    $scope.articles = res.data;
+                $http.get('/backend/api/articles?limit=8').then(function (res) {
+                    if ($scope.articles == null) {
+                        $scope.articles = res.data;
+                    } else {
+                        $scope.articles = $scope.articles.concat(res.data);
+                    }
                 })
             };
         };
@@ -24,4 +28,24 @@ angular.module('resonance.news', ['ngRoute'])
         $scope.update();
         $scope.update();
         $rootScope.page = "News"
-    }]);
+    }]).directive('scroll', function () {
+
+    return {
+
+        restrict: 'A',
+        link: function (scope, elem, attrs) {
+            $(window).scroll(function () {
+                var body = document.body,
+                    html = document.documentElement;
+                // Compatibility
+                var height = Math.max(body.scrollHeight, body.offsetHeight,
+                    html.clientHeight, html.scrollHeight, html.offsetHeight);
+                if ($(this).scrollTop() >= height - 1000) {
+                    scope.update();
+                }
+            });
+        }
+
+    }
+
+});

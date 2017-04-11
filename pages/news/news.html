@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="news/news.css">
 <div ng-controller="NewsCtrl" data-ng-init="init()">
-    <md-list>
-
+    <md-list scroll>
         <md-list-item class="md-3-line" ng-repeat="article in articles" ng-click="viewStory(article.url)">
             <img src="/images/newspaper.png" class="md-avatar">
             <div class="md-list-item-text" layout="column">
@@ -9,10 +8,10 @@
                 <span>{{article.source}}: {{article.section}}</span></div>
         </md-list-item>
     </md-list>
-    <p ng-if="articles != null" style="text-align: center">Noting more to show
+    <p ng-if="articles != null" style="text-align: center">Nothing more to show
         <md-icon ng-bind="'sentiment_dissatisfied'"></md-icon>
     </p>
-    <p ng-if="articles == null" style="text-align: center">Noting to show
+    <p ng-if="articles == null" style="text-align: center">Nothing to show
         <md-icon ng-bind="'sentiment_dissatisfied'"></md-icon>
     </p>
 </div>
