@@ -1,16 +1,12 @@
 'use strict';
 
-function test2() {
-    console.error("HALP WHY IT NO WORK");
-}
-
 angular.module('resonance.news', ['ngRoute'])
     .controller('NewsCtrl', ['$scope', '$rootScope', '$http', '$window', function ($scope, $rootScope, $http, $window) {
         $scope.articles = null;
         $scope.update = function () {
-            $scope.update = function () {
-                $http.get('/backend/api/articles?limit=8').then(function (res) {
-                    if ($scope.articles == null) {
+            $scope.update = function (amount) {
+                $http.get('/backend/api/articles?limit=' + amount).then(function (res) {
+                    if ($scope.articles === null) {
                         $scope.articles = res.data;
                     } else {
                         $scope.articles = $scope.articles.concat(res.data);
@@ -25,8 +21,8 @@ angular.module('resonance.news', ['ngRoute'])
             $window.open(path, '_blank');
         };
         // Don't ask. It works. It makes three requests.
-        $scope.update();
-        $scope.update();
+        $scope.update(1);
+        $scope.update(14);
         $rootScope.page = "News"
     }]).directive('scroll', function () {
 
@@ -41,7 +37,7 @@ angular.module('resonance.news', ['ngRoute'])
                 var height = Math.max(body.scrollHeight, body.offsetHeight,
                     html.clientHeight, html.scrollHeight, html.offsetHeight);
                 if ($(this).scrollTop() >= height - 1000) {
-                    scope.update();
+                    scope.update(4);
                 }
             });
         }
