@@ -1,5 +1,6 @@
 <?php
 require_once 'lib/Repository.php';
+
 class ContactRepository extends Repository
 {
     protected $tableName = 'contact';

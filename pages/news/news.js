@@ -22,7 +22,7 @@ angular.module('resonance.news', ['ngRoute'])
         };
         // Don't ask. It works. It makes three requests.
         $scope.update(1);
-        $scope.update(14);
+        $scope.update(32);
         $rootScope.page = "News"
     }]).directive('scroll', function () {
 
