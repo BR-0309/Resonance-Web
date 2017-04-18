@@ -13,7 +13,7 @@ class ControllerApi extends ControllerBase
         $langs = '(1,2,3,4,5,6,7,8,9)'; // TEMP
         $countries = '(1,2,3,4,5,6,7,8,9)'; // TEMP
         $limit = 20;
-        $time = 'NOW()';
+        $time = 60 * 60;
 
         if (isset($_GET['limit']) && is_int((int)$_GET['limit']) && $_GET['limit'] > 0) {
             $limit = $_GET['limit'];
