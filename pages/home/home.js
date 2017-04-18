@@ -1,15 +1,19 @@
 'use strict';
-var translations = {
-    HEADLINE: 'What an awesome module!',
-    PARAGRAPH: 'Srsly!'
-};
-// Declare app level module which depends on views, and components
 angular.module('resonance-home', [
     'ngRoute',
-    'ngMaterial'
-]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    'ngMaterial',
+    'ngSanitize',
+    'pascalprecht.translate'
+]).config(['$locationProvider', '$routeProvider', '$translateProvider', function ($locationProvider, $routeProvider, $translateProvider) {
     $locationProvider.hashPrefix('!');
     $routeProvider.otherwise({redirectTo: '/'});
+
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'lang/locale-',
+        suffix: '.json'
+    });
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.useSanitizeValueStrategy(null);
 }]).config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('teal', {

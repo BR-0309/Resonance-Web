@@ -1,3 +1,15 @@
 {
-  "Test": "Test-en"
+  "app.title": "Resonance",
+  "lang.code": "en",
+  "description": "Compare news sources or just read what comes. Get out of the echo chamber, and start resonating!",
+  "main.tryit": "Try it now!",
+  "copyright": "Copyright © {{years}} {{creator}}",
+  "main.title": "Home | Resonance",
+  "main.subtitle": "Where no news is fake news. Probably",
+  "main.continuous.title": "Continuous",
+  "main.continuous.text": "Never stop informing yourself.",
+  "main.explore.title": "Explore",
+  "main.explore.text": "Explore the world through the written word, or discover the next big innovation",
+  "main.compare.title": "Compare",
+  "main.compare.text": "Compare the news from different sources. Don't be locked in an echo chamber.\nResonate"
 }

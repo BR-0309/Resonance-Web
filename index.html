@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-<html lang="en" ng-app="resonance-home" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html lang="{{'lang.code' | translate }}" ng-app="resonance-home" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>
-<html lang="en" ng-app="resonance-home" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="{{'lang.code' | translate }}" ng-app="resonance-home" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>
-<html lang="en" ng-app="resonance-home" class="no-js lt-ie9"> <![endif]-->
+<html lang="{{'lang.code' | translate }}" ng-app="resonance-home" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="resonance-home" class="no-js"> <!--<![endif]-->
+<html lang="{{'lang.code' | translate }}" ng-app="resonance-home" class="no-js"> <!--<![endif]-->
 <head>
-    <title>Home | Resonance</title>
+    <title>{{'main.title' | translate}}</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="{{'lang.code' | translate }}">
 
     <meta name="description"
-          content="Compare news sources or just read what comes. Get out of the echo chamber, and start resonating!">
+          content="{{'description' | translate}}">
     <meta name="author" content="Benjamin Raison">
     <meta name="theme-color" content="#00897b">
 
@@ -24,6 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/angular-translate/angular-translate.min.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
@@ -43,14 +45,14 @@
 <header>
     <md-toolbar class="md-primary">
         <div class="md-toolbar-tools">
-            <h2>Resonance</h2>
+            <h2>{{"app.title" | translate}}</h2>
         </div>
     </md-toolbar>
     <div id="banner" md-colors="{background: 'primary-700'}">
-        <h1>Resonance</h1>
-        <h3>Where no news is fake news. Probably</h3>
+        <h1>{{"app.title" | translate}}</h1>
+        <h3>{{"main.subtitle" | translate}}</h3>
         <a href="pages/">
-            <md-button class="md-raised">Try it now!</md-button>
+            <md-button class="md-raised">{{'main.tryit' | translate}}</md-button>
         </a>
     </div>
 </header>
@@ -63,22 +65,22 @@
         <md-card class="card-home">
             <md-icon ng-bind="'autorenew'"></md-icon>
             <md-card-content>
-                <h2>Continuous</h2>
-                <p>Never stop informing yourself.</p>
+                <h2>{{'main.continuous.title' | translate}}</h2>
+                <p>{{'main.continuous.text' | translate}}</p>
             </md-card-content>
         </md-card>
         <md-card class="card-home">
             <md-icon ng-bind="'explore'"></md-icon>
             <md-card-content>
-                <h2>Explore</h2>
-                <p>Explore the world through the written word, or discover the next big innovation</p>
+                <h2>{{'main.explore.title' | translate}}</h2>
+                <p>{{'main.explore.text' | translate}}</p>
             </md-card-content>
         </md-card>
         <md-card class="card-home">
             <md-icon ng-bind="'merge_type'"></md-icon>
             <md-card-content>
-                <h2>Compare</h2>
-                <p>Compare the news from different sources. Don't be locked in an echo chamber.<br>Resonante.</p>
+                <h2>{{'main.compare.title' | translate}}</h2>
+                <p>{{'main.compare.text' | translate}}</p>
             </md-card-content>
         </md-card>
         <md-card class="card-home">
@@ -91,12 +93,12 @@
     </div>
     <div class="center" flex="grow">
         <a href="pages/">
-            <md-button class="md-raised md-primary">Try it now!</md-button>
+            <md-button class="md-raised md-primary">{{'main.tryit' | translate}}</md-button>
         </a>
     </div>
 </main>
 <footer>
-    <a href="/"><p>Copyright © 2017 Benjamin Raison</p></a>
+    <a href="/"><p>{{'copyright' | translate:'{years: "2017", creator: "Benjamin Raison"}'}}</p></a>
 </footer>
 </body>
 </html>
