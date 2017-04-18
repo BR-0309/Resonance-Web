@@ -2,18 +2,20 @@
 angular.module('resonance-home', [
     'ngRoute',
     'ngMaterial',
-    'ngSanitize',
+    'ngCookies',
     'pascalprecht.translate'
 ]).config(['$locationProvider', '$routeProvider', '$translateProvider', function ($locationProvider, $routeProvider, $translateProvider) {
     $locationProvider.hashPrefix('!');
     $routeProvider.otherwise({redirectTo: '/'});
 
     $translateProvider.useStaticFilesLoader({
-        prefix: 'lang/locale-',
+        prefix: 'lang/',
         suffix: '.json'
-    });
-    $translateProvider.preferredLanguage('en');
-    $translateProvider.useSanitizeValueStrategy(null);
+    })
+        .fallbackLanguage('en_GB')
+        .determinePreferredLanguage()
+        .useSanitizeValueStrategy(null)
+        .useLocalStorage();
 }]).config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('teal', {
