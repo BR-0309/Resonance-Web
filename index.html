@@ -43,11 +43,22 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
 </head>
-<body ng-app="resonance-home">
+<body ng-app="resonance-home" ng-controller="HomeCtrl">
 <header>
     <md-toolbar class="md-primary">
         <div class="md-toolbar-tools">
             <h2>{{"app.title" | translate}}</h2>
+            <div class="select-lang">
+                <md-select ng-model="lang" ng-change="changeLanguage(lang)" class="md-no-underline"
+                           md-selected-text="getFlag(lang)">
+                    <span ng-repeat="lang in langs">
+                        <md-option value="{{lang.key}}" selected>
+                            <img src="{{lang.img}}">
+                            <span>{{lang.key | translate}}</span>
+                        </md-option>
+                    </span>
+                </md-select>
+            </div>
         </div>
     </md-toolbar>
     <div id="banner" md-colors="{background: 'primary-700'}">

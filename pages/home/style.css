@@ -21,6 +21,15 @@ md-tooltip {
     margin-top: 7px;
 }
 
+.select-lang {
+    position: absolute;
+    right: 5px;
+}
+
+.select-lang * {
+    color: white;
+}
+
 /*
 MAIN CONTENT
 =======================================

@@ -23,4 +23,24 @@ angular.module('resonance-home', [
             'hue-1': '700'
         })
         .accentPalette('pink');
-});
+}).controller('HomeCtrl', ['$scope', '$translate', '$sce', function ($scope, $translate, $sce) {
+    $scope.langs = [
+        {
+            key: 'en_US',
+            img: 'images/newspaper.png'
+        },
+        {
+            key: 'en_GB',
+            img: 'images/newspaper.png'
+        }
+    ];
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+        console.log("changed lang to: " + langKey)
+    };
+    $scope.getFlag = function (lang) {
+        var tag = '<img src="https://www.imeremit.co.uk/Images/flags/UK.png">';
+        $sce.trustAsHtml(tag);
+        return tag;
+    }
+}]);
