@@ -2,7 +2,6 @@
 require_once 'Util.php';
 function handleError($exception)
 {
-    var_dump($exception);
     Util::returnMessage(500, "Unknown error occurred");
 }
 
