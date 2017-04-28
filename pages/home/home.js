@@ -27,11 +27,11 @@ angular.module('resonance-home', [
     $scope.langs = [
         {
             key: 'en_US',
-            img: 'images/newspaper.png'
+            img: 'images/us.png'
         },
         {
             key: 'en_GB',
-            img: 'images/newspaper.png'
+            img: 'images/uk.png'
         }
     ];
     $scope.changeLanguage = function (langKey) {
@@ -39,7 +39,7 @@ angular.module('resonance-home', [
         console.log("changed lang to: " + langKey)
     };
     $scope.getFlag = function (lang) {
-        var tag = '<img src="https://www.imeremit.co.uk/Images/flags/UK.png">';
+        var tag = '<img src="images/uk.png">';
         $sce.trustAsHtml(tag);
         return tag;
     }
