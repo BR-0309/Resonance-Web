@@ -39,7 +39,12 @@ angular.module('resonance-home', [
         console.log("changed lang to: " + langKey)
     };
     $scope.getFlag = function (lang) {
-        var tag = '<img src="images/uk.png">';
+        var tag;
+        if (lang === "en_US") {
+            tag = '<img src="images/us.png">';
+        } else {
+            tag = '<img src="images/uk.png">';
+        }
         $sce.trustAsHtml(tag);
         return tag;
     }
